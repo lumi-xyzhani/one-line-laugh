@@ -35,6 +35,8 @@ def write_line(line: str) -> str:
             f"but it is {len(line)} characters; "
             "shorten the joke to a single sentence before submitting"
         )
+    if not line.strip():
+            raise ValueError("line must not be only white space")
     if "\n" in line or "\r" in line:
         raise ValueError("line must not contain any newline characters")
 
